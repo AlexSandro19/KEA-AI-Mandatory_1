@@ -15,7 +15,7 @@ statistical_data_top_10_df = food_fertilizers_top_10_df.merge(
 
 country_list = statistical_data_top_10_df['Entity']
 
-statistical_data_top_10_df.to_csv('./statistical_top_10_data.csv', index=False)
+statistical_data_top_10_df.to_csv('./top_fertilizers_alex.csv', index=False)
 
 
 
