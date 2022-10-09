@@ -3,7 +3,7 @@ import pandas as pd
 from scipy import stats
 import matplotlib.pyplot as plt
 
-all_combined = pd.read_csv('./all_combined.csv')
+all_combined = pd.read_csv('./all_combined_clean.csv')
 
 fertilizers_use = all_combined.groupby(by=['Year'])['Total fertilizer use per area of cropland in kg per hectare'].mean().round(2)
 fertilizers_use_df = fertilizers_use.to_frame(name="Average fertilizer use per area of cropland in kg per hectare").reset_index()
@@ -46,14 +46,14 @@ statistical_data_df.to_csv('./statistical_data.csv', index=False)
 
 fig, axs = plt.subplots(5, 1, sharex=True)
 # Remove vertical space between axes
-fig.subplots_adjust(hspace=0)
+fig.subplots_adjust(hspace=0.2)
 
 # Plot each graph, and manually set the y tick values
-axs[0].bar(statistical_data_df['Year'], statistical_data_df['Average fertilizer use per area of cropland in kg per hectare'],color='blue', label="fertilizers")
-axs[1].bar(statistical_data_df['Year'], statistical_data_df['Average food supply quantity, kg'],color='red', label="food quantity")
-axs[2].bar(statistical_data_df['Year'], statistical_data_df['Average food supply quality, kcal/capita/day'],color='green', label='food quality')
-axs[3].bar(statistical_data_df['Year'], statistical_data_df["Average number of deaths from digestive diseases"],color='green', label='deaths')
-axs[4].bar(statistical_data_df['Year'], statistical_data_df["Average pesticides use per area of cropland in kg per hectare"],color='green', label='pesticides')
+axs[0].bar(statistical_data_df['Year'], statistical_data_df['Average fertilizer use per area of cropland in kg per hectare'],color='blue', label="fertilizers,kg/ha")
+axs[1].bar(statistical_data_df['Year'], statistical_data_df['Average food supply quantity, kg'],color='red', label="average quantity,kg")
+axs[2].bar(statistical_data_df['Year'], statistical_data_df['Average food supply quality, kcal/capita/day'],color='green', label='average quality,kcal/capita/day')
+axs[3].bar(statistical_data_df['Year'], statistical_data_df["Average pesticides use per area of cropland in kg per hectare"],color='orange', label='pesticides,kg/ha')
+axs[4].bar(statistical_data_df['Year'], statistical_data_df["Average number of deaths from digestive diseases"],color='black', label='deaths per 1000')
 # axs[0].set_yticks(np.arange(-0.9, 1.0, 0.4))
 # axs[0].set_ylim(-1, 1)
 

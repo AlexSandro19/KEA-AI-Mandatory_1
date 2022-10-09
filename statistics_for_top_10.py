@@ -54,12 +54,12 @@ final_merged_table_top100_average.to_csv('./final_merged_table_top100_average.cs
 
 
 fig, axs = plt.subplots(5, 1, sharex=True)
-fig.subplots_adjust(hspace=0)
-axs[0].bar(food_supply_quantity_top_10_average_df['Year'], food_supply_quantity_top_10_average_df['Average food supply quantity, kg'],color='red', label="average quantity")
-axs[1].bar(food_supply_quality_top_10_average_df['Year'], food_supply_quality_top_10_average_df['Average food supply quality, kcal/capita/day'],color='red', label="average quantity")
-axs[2].bar(fertilizers_top_10_average_df['Year'], fertilizers_top_10_average_df['Average fertilizer use per area of cropland in kg per hectare'],color='red', label="fertilizers")
-axs[3].bar(pesticides_top_10_average_df['Year'], pesticides_top_10_average_df['Average Pesticides used per area of cropland in kg per hectare'],color='red', label="pesticides")
-axs[4].bar(deaths_top_10_average_df['Year'], deaths_top_10_average_df['Average Number of deaths from digestive diseases'],color='red', label="deaths")
+fig.subplots_adjust(hspace=0.2)
+axs[0].bar(food_supply_quantity_top_10_average_df['Year'], food_supply_quantity_top_10_average_df['Average food supply quantity, kg'],color='red', label="average quantity,kg")
+axs[1].bar(food_supply_quality_top_10_average_df['Year'], food_supply_quality_top_10_average_df['Average food supply quality, kcal/capita/day'],color='green', label="average quality,kcal/capita/day")
+axs[2].bar(fertilizers_top_10_average_df['Year'], fertilizers_top_10_average_df['Average fertilizer use per area of cropland in kg per hectare'],color='blue', label="fertilizers,kg/ha")
+axs[3].bar(pesticides_top_10_average_df['Year'], pesticides_top_10_average_df['Average Pesticides used per area of cropland in kg per hectare'],color='orange', label="pesticides,kg/ha")
+axs[4].bar(deaths_top_10_average_df['Year'], deaths_top_10_average_df['Average Number of deaths from digestive diseases'],color='black', label="deaths per 1000")
 axs[0].legend(loc="lower right")
 axs[1].legend(loc="lower right")
 axs[2].legend(loc="lower right")
